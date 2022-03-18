@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useRouter } from 'next/router';
 import 'tailwindcss/tailwind.css'
 import tw from 'tailwind-styled-components';
 import { auth, provider } from '../firebase/firebase'
 import { onAuthStateChanged, signInWithPopup } from 'firebase/auth';
-
-
 
 const login = () => {
 

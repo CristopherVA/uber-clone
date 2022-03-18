@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/dist/client/router';
+import { useRouter } from 'next/router';
 import 'tailwindcss/tailwind.css'
 import tw from 'tailwind-styled-components';
 import { Map } from '../components/Map'
@@ -49,12 +49,12 @@ const Confirm = () => {
     useEffect(() => {
         getPikupCordinates(pickup);
         getDropoffCordinates(dropoff);
-    }, [])
+    }, [pickup, dropoff])
 
 
     return (
         <Wrapper>
-            <Link href="/search">
+            <Link href="/search" passHref>
                 <BackButton  >
                     <BackIcon src="https://img.icons8.com/ios-filled/50/000000/left.png" />
                 </BackButton>

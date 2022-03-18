@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/router';
+import { useState } from 'react'
 import 'tailwindcss/tailwind.css'
 import tw from 'tailwind-styled-components';
 
@@ -23,8 +22,8 @@ const search = () => {
     return (
         <Wrapper>
 
-            <Link href="/">
-                <BackButton  >
+            <Link href="/" passHref>
+                <BackButton>
                     <BackIcon src="https://img.icons8.com/ios-filled/50/000000/left.png" />
                 </BackButton>
             </Link>
@@ -71,7 +70,7 @@ const search = () => {
                     pickup: pickup,
                     dropoff: dropoff
                 }
-            }}>
+            }} passHref >
                 <ConfirmUber>Confirm Locations</ConfirmUber>
             </Link>
 
@@ -84,12 +83,6 @@ export default search
 const Wrapper = tw.div`
  h-screen flex flex-col bg-gray-200
 `
-
-const BackButton = tw.div`
-    p-2 bg-white cursor-pointer
-`
-
-const BackIcon = tw.img``
 
 const SerarchInputs = tw.div`
     bg-white flex items-center  pb-2 mb-4
@@ -138,4 +131,12 @@ const StarIcon = tw.img`
 
 const ConfirmUber = tw.div`
     h-14 cursor-pointer bg-black p-4 mt-4 font-bold text-lg mx-1 rounded-xs text-white flex justify-center items-center
+`
+
+const BackButton = tw.div`
+shadow-lg bg-white p-1 rounded-full absolute z-[1000] top-2 left-2 cursor-pointer
+`
+
+const BackIcon = tw.img`
+h-10 
 `

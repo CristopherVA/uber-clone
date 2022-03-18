@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/dist/client/router';
+import { useRouter } from 'next/router';
 import Link from 'next/link'
 import 'tailwindcss/tailwind.css'
 import tw from 'tailwind-styled-components';
@@ -15,7 +15,6 @@ export default function Home() {
   useEffect(() => {
 
     onAuthStateChanged(auth, user => {
-      console.log(user)
       if(user) {
         setUser({
           name: user.displayName,
@@ -45,19 +44,19 @@ export default function Home() {
           </Profile>
         </Header>
         <ButtonItems>
-          <Link href="/search">
+          <Link href="/search" passHref>
             <ButtonAction>
               <ImgButton src="https://i.ibb.co/cyvcpfF/uberx.png" />
               Ride
             </ButtonAction>
           </Link>
-          <Link href="/search">
+          <Link href="/search" passHref>
             <ButtonAction>
               <ImgButton src="https://i.ibb.co/n776JLm/bike.png" />
               2-Wheels
             </ButtonAction>
           </Link>
-          <Link href="/search">
+          <Link href="/search" passHref>
             <ButtonAction>
               <ImgButton src="https://i.ibb.co/5RjchBg/uberschedule.png" />
               Reserve
