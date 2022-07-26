@@ -10,7 +10,6 @@ const login = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const router = useRouter()
 
-    
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
         onAuthStateChanged(auth, user => {
