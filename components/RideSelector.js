@@ -10,7 +10,6 @@ const RideSelector = (props) => {
   const { pickupCoordinates, dropoffCoordinates } = props
 
   const [rideDuraction, setRideDuraction] = useState(0)
-  
   useEffect(() => {
     fetch(`https://api.mapbox.com/directions/v5/mapbox/driving/${pickupCoordinates[0]}, ${pickupCoordinates[1]};${dropoffCoordinates[0]}, ${dropoffCoordinates[1]}?` + 
       new URLSearchParams({
@@ -19,7 +18,8 @@ const RideSelector = (props) => {
     )
     .then(res => res.json())
     .then(data => {
-        setRideDuraction(data.routes[0].duration / 100)
+      console.log(data.routes[0])
+        setRideDuraction(data.routes[0]?.distance / 100)
     })
   }, [pickupCoordinates, dropoffCoordinates])
 
