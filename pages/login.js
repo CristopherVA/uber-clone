@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useRouter } from 'next/router';
 import 'tailwindcss/tailwind.css'
 import tw from 'tailwind-styled-components';
@@ -7,15 +7,18 @@ import { onAuthStateChanged, signInWithPopup } from 'firebase/auth';
 
 const login = () => {
 
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const router = useRouter()
 
+    
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             if (user) {
                 router.push('/')
             }
         })
-    }, [])
+    }, [router])
 
     return (
         <Wrapper>

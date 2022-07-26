@@ -5,6 +5,7 @@ import tw from 'tailwind-styled-components';
 
 const search = () => {
 
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [inputValue, setInputValue] = useState({
         pickup: '',
         dropoff: ''
