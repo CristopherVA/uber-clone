@@ -29,7 +29,8 @@ export default function Home() {
   }, [router])
 
   return (
-    <Wrapper>
+    <div className='bg-slate-900 w-full h-full'>
+      <Wrapper>
       <Map />
       <ActionButtons>
         {/* Header */}
@@ -67,11 +68,12 @@ export default function Home() {
         {/* InputBottom */}
       </ActionButtons>
     </Wrapper>
+    </div>
   )
 }
 
 const Wrapper = tw.div`
-flex flex-col bg-red-300 h-screen
+flex flex-col bg-red-300 h-screen max-w-lg mx-auto shadow-lg rounded-2xl
 `
 
 const ActionButtons = tw.div`

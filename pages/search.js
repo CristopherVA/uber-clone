@@ -21,6 +21,8 @@ const search = () => {
     }
 
     return (
+        <div className='bg-slate-900 w-full h-full'>
+
         <Wrapper>
 
             <Link href="/" passHref>
@@ -76,13 +78,14 @@ const search = () => {
             </Link>
 
         </Wrapper>
+        </div>
     )
 }
 
 export default search
 
 const Wrapper = tw.div`
- h-screen flex flex-col bg-gray-200
+ h-screen flex flex-col bg-gray-200 max-w-xl mx-auto shadow-lg rounded-2xl relative
 `
 
 const SerarchInputs = tw.div`
@@ -135,7 +138,7 @@ const ConfirmUber = tw.div`
 `
 
 const BackButton = tw.div`
-shadow-lg bg-white p-1 rounded-full absolute z-[1000] top-2 left-2 cursor-pointer
+shadow-lg bg-white p-1 rounded-full absolute z-[1000] top-2 left-2 cursor-pointer aboslute
 `
 
 const BackIcon = tw.img`

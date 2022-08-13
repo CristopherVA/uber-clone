@@ -20,6 +20,7 @@ const login = () => {
     }, [router])
 
     return (
+        <div className='bg-slate-900 w-full h-full'>
         <Wrapper>
             <UberLogo src="https://i.ibb.co/n6LWQM4/Post.png" />
             <TextLogin>Log in to access your account</TextLogin>
@@ -30,13 +31,14 @@ const login = () => {
                 Sign in with google
             </ButtonLogin>
         </Wrapper>
+        </div>
     )
 }
 
 export default login
 
 const Wrapper = tw.div`
-    h-screen bg-white p-4
+    h-screen bg-white p-4 max-w-xl mx-auto shadow-lg rounded-2xl
 `
 
 const UberLogo = tw.img`

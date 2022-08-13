@@ -11,10 +11,17 @@ export const Map = ({ pickupCoordinates, dropoffCoordinates }) => {
 
     useEffect(() => {
         const map = new mapboxGl.Map({
+
             container: 'map',
-            style: 'mapbox://styles/drakosi/ckvcwq3rwdw4314o3i2ho8tph',
+            style: 'mapbox://styles/mapbox/satellite-streets-v11',
+            zoom: 1.5,
             center: [-99.29011, 39.39172],
-            zoom: 10
+            projection: 'globe'
+        });
+
+        map.on('load', () => {
+            // Set the default atmosphere style
+            map.setFog({});
         });
 
         if (pickupCoordinates) {
@@ -29,7 +36,7 @@ export const Map = ({ pickupCoordinates, dropoffCoordinates }) => {
             map.fitBounds([
                 pickupCoordinates,
                 dropoffCoordinates
-            ],{
+            ], {
                 padding: 100
             })
         }
@@ -44,7 +51,7 @@ export const Map = ({ pickupCoordinates, dropoffCoordinates }) => {
 
 
     return (
-        <Wrapper id="map">Map</Wrapper>
+        <Wrapper id="map"></Wrapper>
     )
 }
 

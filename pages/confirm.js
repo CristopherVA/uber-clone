@@ -53,26 +53,29 @@ const Confirm = () => {
 
 
     return (
-        <Wrapper>
-            <Link href="/search" passHref>
-                <BackButton  >
-                    <BackIcon src="https://img.icons8.com/ios-filled/50/000000/left.png" />
-                </BackButton>
-            </Link>
-            <Map
-                pickupCoordinates={pickupCoordinates}
-                dropoffCoordinates={dropoffCoordinates}
-            />
-            <RideContainer>
-                <RideSelector
+        <div className='bg-slate-900 w-full h-full'>
+
+            <Wrapper>
+                <Link href="/search" passHref>
+                    <BackButton  >
+                        <BackIcon src="https://img.icons8.com/ios-filled/50/000000/left.png" />
+                    </BackButton>
+                </Link>
+                <Map
                     pickupCoordinates={pickupCoordinates}
                     dropoffCoordinates={dropoffCoordinates}
                 />
-                <ConfirmButton>
-                    Confim UberX
-                </ConfirmButton>
-            </RideContainer>
-        </Wrapper>
+                <RideContainer>
+                    <RideSelector
+                        pickupCoordinates={pickupCoordinates}
+                        dropoffCoordinates={dropoffCoordinates}
+                    />
+                    <ConfirmButton>
+                        Confim UberX
+                    </ConfirmButton>
+                </RideContainer>
+            </Wrapper>
+        </div>
     )
 }
 
@@ -80,7 +83,7 @@ export default Confirm
 
 
 const Wrapper = tw.div`
-    h-screen flex flex-col
+    h-screen flex flex-col max-w-xl mx-auto bg-white shadow-lg rounded-2xl relative
 `
 const RideContainer = tw.div`
     flex flex-1 flex-col

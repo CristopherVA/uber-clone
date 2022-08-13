@@ -70,7 +70,7 @@ export default RideSelector
 
 
 const Wrapper = tw.div`
-    flex flex-col flex-1
+    flex flex-col flex-1 bg-white
 `
 
 const Info = tw.div`
